@@ -1,0 +1,229 @@
+header#masthead{
+	text-align: center;
+	padding-top:3.5em;
+}
+header#masthead hgroup{
+	padding-bottom: 1em;
+}
+header#masthead .site-title{
+	font-size: 5em;
+}
+header#masthead .site-title a,
+header#masthead .site-title a:visited{
+	font-family: 'Josefin Slab', 'Cambria', 'Georgia' serif;
+	color: #333;
+	text-decoration: none;
+}
+header#masthead .site-title a:hover{
+	text-decoration:underline;
+}
+header#masthead .site-description{
+	color: #777;
+	font-style: italic;
+}
+
+header nav .menu{
+	font-size: 1.3em;
+	margin: 0 auto;
+	display:table;
+	border-top: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+}
+header nav .menu ul{
+	list-style: none;
+	text-align: center;
+	margin: 0;
+}
+header nav .menu ul li{
+	padding: 5px 1em;
+	-moz-transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-o-transition: background-color 0.3s;
+	transition: background-color 0.3s;
+}
+header nav .menu ul li:hover{
+	background-color: #AAA;
+}
+header nav .menu ul a{
+	text-decoration: none;
+	color: #686868;
+}
+header nav .menu ul a:hover{
+	text-decoration: underline;
+	color: #eee;
+}
+.menu-toggle{
+	font-size: 2em;
+	background-color: #AAA;
+}
+
+.page-header{
+	padding-left: 1em;
+	font-size: 1.2em;
+	margin-bottom: 1.4em;
+}
+
+/* Primary Post area */
+#primary{
+	margin: 5em auto;
+	max-width: 45em;
+	padding: 0 8px;
+}
+
+/* Post Entry */
+article.hentry{
+	margin-bottom: 3em;
+}
+
+/* Entry header */
+.entry-header{
+	text-align: center;
+	margin: 0;
+}
+.entry-header a{
+	text-decoration: none;
+	color: #000;
+}
+.entry-header a:hover{
+	color: #333;
+	text-decoration: underline;
+}
+/** Entry Title */
+.entry-header h1{
+	font-size: 1.8em;
+}
+/** Entry meta */
+.entry-header .entry-meta{
+	font-size: 0.7em;
+}
+
+/* Entry content*/
+article .entry-content{
+	text-align: justify;
+}
+article .entry-content blockquote{
+	font-style: italic;
+	font-size: 0.9em;
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+	background-color: #F0F0F0;
+}
+article .entry-content .cite{
+	font-size: 0.9em;
+}
+article h1{
+	font-size: 1.65em;
+}
+article h2{
+	font-size: 1.5em;
+}
+article h3{
+	font-size: 1.45em;
+}
+article h4{
+	font-size: 1.3em;
+}
+article h5{
+	font-size: 1.2em;
+}
+article h6{
+	font-size: 1.1em;
+}
+
+/* Secondary area */
+#secondary{
+	margin: auto 10%;
+	padding: 2em 0;
+	border-top: 1px solid #AAA;
+}
+
+#search{
+	text-align: center;
+	float: none;
+	width: auto;
+	margin-bottom: 1.5em;
+}
+
+aside.widget{
+	width: 13em;
+	float: left;
+	margin: 0 1em 0 0;
+	padding: 5px;
+
+}
+
+
+/* Entry footer */
+article footer{
+	font-size: 0.8em;
+}
+article footer a{
+	color: #333;
+	text-decoration: none;
+}
+article footer a:hover{
+	color: #333;
+	text-decoration: underline;
+}
+
+/* comments */
+.comments-title{
+	margin: 1em 0 2em;
+}
+
+.commentlist{
+	list-style: none;
+	margin: 0 1em 1.5em;
+}
+
+.commentlist li{
+	margin: 0.5em 0;
+	padding: 0.2em 0.6em;
+	background-color: #efefef;
+}
+
+.comment .avatar{
+	border-radius: 20px;
+	vertical-align: middle;
+}
+
+.comment footer{
+	margin: 1em 0;
+}
+
+.comment-author{
+	float:left;
+}
+.comment-meta{
+	float:right;
+}
+.comment-content{
+	clear: both;
+}
+.reply{
+	text-align: right;
+}
+
+#respond{
+	margin-top: 2em;
+	padding: 0 3em;
+}
+#respond h3{
+	font-size: 1.5em;
+}
+.form-allowed-tags,
+.form-allowed-tags abbr,
+.form-allowed-tags code {
+	font-size: 0.8em;
+}
+.form-submit{
+	text-align: right;
+}
+
+/* Page Footer */
+#colophon .site-info{
+	padding-right: 10%;
+	float: right;
+	font-size: 0.8em;
+	margin-bottom: 10px;
+}

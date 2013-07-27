@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{% if site.baseurl != "/" and site.baseurl != "" %}
+{% assign baseurl = site.baseurl %}
+{% else %}
+{% assign baseurl = "" %}
+{% endif %}
+<div id="primary" class="content-area">
+	<div id="content" class="site-content" role="main">
+
+		{% for post in site.posts %}
+
+		<article>
+			<header class="entry-header">
+				<h1 class="entry-title"><a href="{{ baseurl }}{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+
+				<div class="entry-meta">
+					{{ post.date | date_to_string }}
+				</div>
+			</header>
+
+			<div class="entry-summary">
+				{{ post.excerpt }}
+			</div>
+
+			<footer class="entry-meta">
+				{% if post.categories != empty %}
+					<span class="cat-links">
+						Posted in {{ post.categories | array_to_sentence_string}}
+					</span>
+				{% endif %}
+
+				{% if post.categories != empty and post.tags != empty %}
+					<span class="sep"> | </span>
+				{% endif %}
+
+				{% if post.tags != empty %}
+					<span class="tags-links">
+						{{ post.tags | array_to_sentence_string }}
+					</span>
+				{% endif %}
+			</footer>
+		</article>
+
+		{% endfor %}
+
+	</div>
+</div>

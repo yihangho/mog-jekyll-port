@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="primary" class="content-area">
+	<div id="content" class="site-content" role="main">
+
+		<article>
+			<header class="entry-header">
+				<h1 class="entry-title">{{ page.title }}</h1>
+
+				<div class="entry-meta">
+					{{ page.date | date_to_string }}
+					{% if site.author != "" %}
+						by {{ site.author }}
+					{% endif %}
+				</div>
+			</header>
+
+			<div class="entry-content">
+				{{ content }}
+			</div>
+
+			<footer class="entry-meta">
+				{% if page.categories != empty and page.tags != empty %}
+					This entry is posted in {{ page.categories | array_to_sentence_string}} and tagged {{ page.tags | array_to_sentence_string}}.
+				{% elsif page.categories != empty %}
+					This entry is posted in {{ page.categories | array_to_sentence_string}}.
+				{% elsif page.tags != empty %}
+					This entry is posted in {{ page.tags | array_to_sentence_string}}.
+				{% endif %}
+			</footer>
+		</article>
+		
+	</div>
+</div>
