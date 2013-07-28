@@ -3,7 +3,7 @@ This is a 'theme' or template for [Jekyll](http://jekyllrb.com/ "Jekyll"). This 
 
 ## Installation
 1. Download this repository either by `git clone` or by clicking `Download Zip`.
-2. Copy `index.html`, `_layouts/default.html`, `_layouts/post.html`, `css/main.css`, `css/style.css` and `js/html5shiv.js` over to your Jekyll folder.
+2. Copy `index.html`, everything in `_layouts`, `_includes`, `_plugins`, `css` and `js` to your Jekyll folder.
 
 ## Global variables
 There are several global variables that can be set in `_config.yml` to slightly modify the behavior of this template.
