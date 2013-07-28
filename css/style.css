@@ -554,3 +554,37 @@ object {
 .infinity-end.neverending #colophon {
 	display: block;
 }
+
+footer.entry-meta {
+	margin-top: 15px;
+}
+
+aside#recent-posts-2
+{
+	width: 100%;
+	text-align: center;
+}
+aside#recent-posts-2 h1
+{
+	text-align: center;
+}
+aside#recent-posts-2 ul
+{
+	list-style-type: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+aside#recent-posts-2 li
+{
+	display: inline;
+	padding-left: 5px;
+	margin-left: 5px;
+	border-left: 1px solid #6D4C26;
+}
+aside#recent-posts-2 li:first-child
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	border-left: 0px;
+}

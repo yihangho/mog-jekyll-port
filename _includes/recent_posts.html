@@ -1,0 +1,19 @@
+<aside id="recent-posts-2" class="widget widget_recent_entries">
+	<h1 class="widget-title">Recent Posts</h1>
+	<ul>
+		{% assign i = 0 %}
+		{% for post in site.posts %}
+			{% if i >= 5 %}
+				{% break %}
+			{% endif %}
+			{% if post.status != "publish" %}
+				{% continue %}
+			{% endif %}
+			<li>
+				<a href="{{ baseurl }}{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% assign i = i | plus: 1 %}
+
+		{% endfor %}
+	</ul>
+</aside>

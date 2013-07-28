@@ -6,44 +6,66 @@ layout: default
 {% else %}
 {% assign baseurl = "" %}
 {% endif %}
-<div id="primary" class="content-area">
-	<div id="content" class="site-content" role="main">
 
-		{% for post in site.posts %}
+{% if site.paginate == null %}
+{% assign container = site.posts %}
+{% else %}
+{% assign container = paginator.posts %}
+{% endif %}
 
-		<article>
-			<header class="entry-header">
-				<h1 class="entry-title"><a href="{{ baseurl }}{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+{% for post in container %}
+	{% if post.status != "publish" %}
+		{% continue %}
+	{% endif %}
 
-				<div class="entry-meta">
-					{{ post.date | date_to_string }}
-				</div>
-			</header>
+	<article class="hentry">
+		<header class="entry-header">
+			<h1 class="entry-title"><a href="{{ baseurl }}{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
 
-			<div class="entry-summary">
-				{{ post.excerpt }}
+			<div class="entry-meta">
+				<time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
 			</div>
+		</header>
 
-			<footer class="entry-meta">
-				{% if post.categories != empty %}
-					<span class="cat-links">
-						Posted in {{ post.categories | array_to_sentence_string}}
-					</span>
-				{% endif %}
+		<div class="entry-content">
+			<p>
+				{{ post.content | strip_html | get_excerpt }}
+			</p>
+		</div>
 
-				{% if post.categories != empty and post.tags != empty %}
-					<span class="sep"> | </span>
-				{% endif %}
+		<footer class="entry-meta">
+			{% if post.categories != empty %}
+				<span class="cat-links">
+					Posted in {{ post.categories | array_to_sentence_string}}
+				</span>
+			{% endif %}
+			{% if post.categories != empty and post.tags != empty %}
+				<span class="sep"> | </span>
+			{% endif %}
+			{% if post.tags != empty %}
+				<span class="tags-links">
+					{{ post.tags | array_to_sentence_string }}
+				</span>
+			{% endif %}
+		</footer>
+	</article>
 
-				{% if post.tags != empty %}
-					<span class="tags-links">
-						{{ post.tags | array_to_sentence_string }}
-					</span>
-				{% endif %}
-			</footer>
-		</article>
+{% endfor %}
 
-		{% endfor %}
+<nav role="navigation" class="site-navigation paging-navigation">
+	{% if paginator.next_page %}
+		<div class="nav-previous">
+			<a href="{{ baseurl }}/page{{ paginator.next_page }}">← Older posts</a>
+		</div>
+	{% endif %}
 
-	</div>
-</div>
+	{% if paginator.previous_page %}
+		<div class="nav-next">
+			{% if paginator.previous_page == 1 %}
+				<a href="{{ baseurl }}/">Newer posts →</a>
+			{% else %}
+				<a href="{{ baseurl }}/page{{ paginator.previous_page }}">Newer posts →</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</nav>
